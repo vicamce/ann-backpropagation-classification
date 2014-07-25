@@ -5,11 +5,14 @@ public class Main {
         String fileMerged = "input/ring-merged.txt";
         String fileSeparable = "input/ring-separable.txt";
         String fileTest = "input/ring-test.txt";
+
         String[] file = new String[2];
         file[1] =fileTest;
+        file[0] = fileSeparable;
+        //file[0] = fileMerged;
 
-        int[] nodes = {2,25,15,5,1};
-        double rateLearning = 0.1;
+        int[] nodes = {2,10,7,1};
+        double rateLearning = 0.2;
         double momentum = 0.09;
         int epochs = 1000;
         int dataTrain = 10000;
@@ -23,13 +26,8 @@ public class Main {
         parameters[4] = dataTest;
 
         //Parameters file merged
-        file[0] = fileMerged;
         NeuronalNetwork net = new NeuronalNetwork(nodes,parameters, file);
         net.neuronalNetwork();
 
-        ///Parameters file separable
-        //file[0] = fileSeparable;
-        //NeuronalNetwork net = new NeuronalNetwork(nodes,parameters, file);
-        //net.neuronalNetwork();
     }
 }
