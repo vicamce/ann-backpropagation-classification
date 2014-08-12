@@ -22,7 +22,7 @@ public class NeuronalNetwork {
         layer[0] = new Layers(numNodes[0],numNodes[0]);
 
         //Assign nodes each layer and number inputs
-        for(int indexLayer=1; indexLayer < numLayers; indexLayer++)
+        for(int indexLayer = 1; indexLayer < numLayers; indexLayer++)
         {
             layer[indexLayer] = new Layers(numNodes[indexLayer],numNodes[indexLayer - 1]);
         }
@@ -46,6 +46,7 @@ public class NeuronalNetwork {
                 dataPrediction.loadDataOutputsTest();
                 processTestNetwork();
             }
+
         }
         catch (Exception e)
         {
@@ -130,7 +131,7 @@ public class NeuronalNetwork {
         for(int pNode = 1; pNode <= numLayers - 1;    pNode++)
         {
             layer[pNode].feedForwardActivation();
-            if(pNode != numLayers-1)
+            if(pNode != numLayers - 1)
             {
                 //get the outputs of last layer and assign this which inputs of next layer
                 layer[pNode + 1].input = layer[pNode].getOutputsLayer();
@@ -140,7 +141,7 @@ public class NeuronalNetwork {
     }
 
     private void backPropagation(int pattern) {
-        int indexNode,indexLayer,indexNextNode,indexInput, indexWeight;
+        int indexNode=0,indexLayer=0,indexNextNode=0,indexInput=0, indexWeight=0;
         double sum;
         int indexFinalLayer = numLayers - 1;
 
